@@ -63,7 +63,68 @@ public class Calculate {
 		}
 	}
 	
+	public static double absValue(double num1) {
+		if( num1 >= 0 ) {
+			return num1;
+		} else {
+			return num1 - (2 * num1);
+		}
+	}
+	
+	public static double max1(double num1, double num2) {
+		if(num1 > num2) {
+			return num1;
+		} else if(num2 > num1) {
+			return num2; 
+		} else {
+			return num1;
+		}
+	}
+	
+	public static double max2(double num1, double num2, double num3) {
+		if(num1 > num2 & num1 > num3) {
+			return num1;
+		} else if(num2 > num1 & num2 > num3) {
+			return num3;
+		} else if(num3 > num1 & num3 > num1) {
+			return num3;
+		}
+	}
+	
+	public static int min(int num1, int num2) {
+		if(num1 < num2) {
+			return num1;
+		} else if(num2 < num1) {
+			return num2;
+		} else {
+			return num1;
+		}
+	}
+	
+	public static double round2(double num1) {
+		double round = 0;
+		round = (num1 * 100) + 0.5;
+		int rounded = (int) round;
+		double rounded2 = (double) rounded;
+		rounded2 = rounded2 / 100;
+		return rounded2;
+	}
+	
+	public static double exponent(double num1, int exp) {
+		double multiply = 1;
+		for (int i = 0; i == exp; i++) {
+			multiply = multiply * num1;
+		}
+		
+		return multiply;
+	}
 }
+
+
+
+
+
+
 
 
 
