@@ -118,6 +118,52 @@ public class Calculate {
 		
 		return multiply;
 	}
+	
+	public static int factorial(int num) {
+		int number = 1;
+		for(int num1 = num; num1 == 1; num1--) {
+			number = number * num1;
+		}
+		
+		return number;
+	}
+	
+	public static boolean isPrime(int num1) {
+		int divide = 0;
+		for(divide = num1; divide != 0; divide--) {
+			if(num1 / divide > 1) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public static int gcf(int num1, int num2) {	
+		int divisible = 0;
+		for(divisible = num1 - 1; divisible == 1; divisible--) {
+			if(num1 % divisible == 0 && num2 % divisible == 0) {
+				return divisible;
+			}
+		}
+		
+		return divisible;
+	}
+	
+	public static double sqrt(double num1) {
+		double squared;
+		double multiplied;
+		for(squared = 0; (num1 - .005) <= squared || squared >= (num1 +.005); squared -= .001) {
+			multiplied = squared * squared;
+			if((num1 - .005) <= squared || squared >= (num1 +.005)) {
+				return round2(multiplied);
+			}
+		}
+		return num1;
+	}
+	
+	public static String quadForm(int num1, int num2, int num3) {
+		
+	}
 }
 
 

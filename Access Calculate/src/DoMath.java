@@ -9,6 +9,9 @@ public class DoMath {
 		System.out.println(Calculate.discriminant(1,2,3));
 		System.out.println(Calculate.round2(29.479));
 		System.out.println(Calculate.exponent(2, 4));
+		System.out.println(Calculate.isPrime(9));
+		System.out.println(Calculate.sqrt(9));
+
 	}
 
 }
