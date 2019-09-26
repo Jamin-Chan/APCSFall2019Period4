@@ -1,7 +1,7 @@
 /* Jamin Chan
  * 8/29/19
  * 4th period
- * Group of methods that perform calcultions
+ * Group of methods that perform calculations
  */
 
 public class Calculate {
@@ -167,7 +167,7 @@ public class Calculate {
 	
 	public static int gcf(int num1, int num2) {	
 		int divisible = 0;
-		for(divisible = num1 - 1; divisible == 1; divisible--) {
+		for(divisible = num1; divisible != 1; divisible--) {
 			if(num1 % divisible == 0 && num2 % divisible == 0) {
 				return divisible;
 			}
@@ -189,7 +189,30 @@ public class Calculate {
 	}
 	
 	public static String quadForm(int num1, int num2, int num3) {
+		double roots = discriminant(num1, num2, num3);
+		System.out.println(roots);
+		if(roots < 0 ){
+			String noRoots = "no real roots";
+			return noRoots;
+		} else if(roots == 0){
+			double root0 = -(num2) / (2 *num1);
 		
+			
+			String done2 = Double.toString(root0);
+			return done2;
+		} else { 
+			double roots2;
+			roots2 = -(num2) - sqrt(roots);
+			roots2 = (roots2) / (2 * num1);
+			
+			double roots3;
+			roots3 = -(num2) + sqrt(roots);
+			roots3 = (roots3) / (2 * num1);
+			
+			String done3 = Double.toString(roots2);
+			String done4 = Double.toString(roots3);
+			return done3 + " and " + done4;
+		}
 	}
 }
 
