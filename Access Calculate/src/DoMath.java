@@ -11,7 +11,8 @@ public class DoMath {
 		System.out.println(Calculate.exponent(2, 4));
 		System.out.println(Calculate.isPrime(9));
 		System.out.println(Calculate.sqrt(9));
-
+		System.out.println(Calculate.gcf(10, 13));
+		System.out.println(Calculate.quadForm(1, 6, 9));
 	}
 
 }
