@@ -1,7 +1,7 @@
 /* Jamin Chan
  * 8/29/19
  * 4th period
- * Group of methods that perform calcultions
+ * Group of methods that perform calculations
  */
 
 public class Calculate {
@@ -29,7 +29,7 @@ public class Calculate {
 	(The ability to define two to more different methods with the same name but different method signitures
 	is called overloading. This avergae method is an example of "overloading method".) */
 	public static double average(double number1, double number2, double number3) {
-		
+		return (number1 + number2 + number3) / 3;
 	}
 	
 	/*A call to  toDegrees converts an angle measure given in radians into degrees. 
@@ -61,6 +61,11 @@ public class Calculate {
 	into an improper fraction. The method accepts a three integers and returns
 	a String. */
 	public static String toImproperFrac(int num1, int num2, int num3) {
+		if(num3 == 0) {
+			throw new IllegalArgumentException
+				("denominator can not be negative");
+		}
+		
 		int numerator = 0;
 		numerator = (num1 * num3) + num2;
 		return numerator + "/" + num3;
@@ -70,6 +75,10 @@ public class Calculate {
 	separately in the order numerator then denominator) into a mixed number.
 	The method accepts a two integers and returns a String. */
 	public static String toMixedNum(int num1, int num2) {
+		if(num2 == 0) {
+			throw new IllegalArgumentException
+				("denominator can not be negative");
+		}
 		int wholeNum = num1 / num2;
 		int numerator = num1 % num2;
 		return wholeNum + "_" + numerator + "/" + num2;
@@ -83,6 +92,11 @@ public class Calculate {
 	}
 	
 	public static boolean isDivisibleBy(int num1, int num2) {
+		if(num2 == 0) {
+			throw new IllegalArgumentException
+				("denominator can not be 0");
+		}
+		
 		if(num1 % num2 == 0) {
 			return true;
 		} else { 
@@ -138,6 +152,10 @@ public class Calculate {
 	}
 	
 	public static double exponent(double num1, int exp) {
+		if(exp < 0) {
+				throw new IllegalArgumentException
+					("exponent cannot be negative");
+		}
 		double multiply = 1;
 		for (int i = 0; i == exp; i++) {
 			multiply = multiply * num1;
@@ -147,6 +165,11 @@ public class Calculate {
 	}
 	
 	public static int factorial(int num) {
+		if(num < 0) {
+			throw new IllegalArgumentException
+				("number can not be negative");
+		}
+		
 		int number = 1;
 		for(int num1 = num; num1 == 1; num1--) {
 			number = number * num1;
@@ -166,8 +189,13 @@ public class Calculate {
 	}
 	
 	public static int gcf(int num1, int num2) {	
+		if(num1 * num2 == 0) {
+			throw new IllegalArgumentException
+				("can not be 0");
+		}
+		
 		int divisible = 0;
-		for(divisible = num1 - 1; divisible == 1; divisible--) {
+		for(divisible = num1; divisible != 1; divisible--) {
 			if(num1 % divisible == 0 && num2 % divisible == 0) {
 				return divisible;
 			}
@@ -177,6 +205,11 @@ public class Calculate {
 	}
 	
 	public static double sqrt(double num1) {
+		if(num1 < 0) {
+			throw new IllegalArgumentException
+			("Can't put negative number");	
+		}
+				
 		double squared;
 		double multiplied;
 		for(squared = 0; (num1 - .005) <= squared || squared >= (num1 +.005); squared -= .001) {
@@ -189,7 +222,24 @@ public class Calculate {
 	}
 	
 	public static String quadForm(int num1, int num2, int num3) {
+		double roots = discriminant(num1, num2, num3);
+		System.out.println(roots);
+		if(roots < 0 ){
+			return "no real roots";
+		} else if(roots == 0){
+			double root0 = -(num2) / (2 *num1);
+			return root0 + "";
+		} else { 
+			double roots2;
+			roots2 = -(num2) - sqrt(roots);
+			roots2 = (roots2) / (2 * num1);
+			
+			double roots3;
+			roots3 = -(num2) + sqrt(roots);
+			roots3 = (roots3) / (2 * num1);
 		
+			return roots2 + " and " + roots3;
+		}
 	}
 }
 
