@@ -224,13 +224,13 @@ public class Calculate {
 	public static String quadForm(int num1, int num2, int num3) {
 		double roots = discriminant(num1, num2, num3);
 		System.out.println(roots);
-		if(roots < 0 ){
-<<<<<<< HEAD
+		
+		if (roots < 0) {
 			return "no real roots";
-		} else if(roots == 0){
+		} else if(roots == 0) {
 			double root0 = -(num2) / (2 *num1);
 			return root0 + "";
-		} else { 
+		} else if(roots > 0) { 
 			double roots2;
 			roots2 = -(num2) - sqrt(roots);
 			roots2 = (roots2) / (2 * num1);
@@ -238,33 +238,10 @@ public class Calculate {
 			double roots3;
 			roots3 = -(num2) + sqrt(roots);
 			roots3 = (roots3) / (2 * num1);
-=======
-			String noRoots = "no real roots";
-			return noRoots;
-		} else if(roots == 0){
-			double root0 = -(num2) / (2 *num1);
->>>>>>> branch 'master' of https://github.com/Jamin-Chan/APCSFall2019Period4.git
-		
-<<<<<<< HEAD
-			return roots2 + " and " + roots3;
-=======
-			
-			String done2 = Double.toString(root0);
-			return done2;
-		} else { 
-			double roots2;
-			roots2 = -(num2) - sqrt(roots);
-			roots2 = (roots2) / (2 * num1);
-			
-			double roots3;
-			roots3 = -(num2) + sqrt(roots);
-			roots3 = (roots3) / (2 * num1);
-			
-			String done3 = Double.toString(roots2);
-			String done4 = Double.toString(roots3);
-			return done3 + " and " + done4;
->>>>>>> branch 'master' of https://github.com/Jamin-Chan/APCSFall2019Period4.git
-		}
+
+			return Double.toString(roots2) + " and " + Double.toString(roots3);
+		}	
+		return "";
 	}
 }
 
