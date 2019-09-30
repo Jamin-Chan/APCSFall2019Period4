@@ -1,10 +1,24 @@
 
 public class Quadratic {
-
 	public static String quadrDescriber(double a, double b, double c) {
-
-		//calculate al values and return string
-		return "";
+		String description = "Description of graph:/ny = " + a + " x^2 + " + b + " x + "+ c + "/n/n");
+		
+		String direction = "Opens: ";
+		if(a < 0) {
+			direction += "Down/n";
+		} else if(a > 0){
+			direction += "Up/n";
+		} else {
+			direction = "Not a Quadratic/n";
+		}
+		
+		double x = (-b) / 2*a;
+		String axis = "Axis of Symmetry: " + x + "/n";
+		
+		String vertex = "Vertex: (" + x + ", " + (a*(x*x) + b*x + c) + ")/n";
+		
+		String xIntercept = "x-intercept(s): " + 
+		return description + direction + axis;
 	}
 
 
@@ -47,7 +61,7 @@ round2
 		return num1;
 	}
 	
-	public static String quadForm(int num1, int num2, int num3) {
+	public static String quadForm(double num1, double num2, double num3) {
 		double roots = discriminant(num1, num2, num3);
 		System.out.println(roots);
 		if(roots < 0 ){
