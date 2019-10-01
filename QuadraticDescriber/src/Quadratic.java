@@ -1,7 +1,8 @@
+import java.util.Scanner;
 
 public class Quadratic {
 	public static String quadrDescriber(double a, double b, double c) {
-		String description = "Description of graph:/ny = " + a + " x^2 + " + b + " x + "+ c + "/n/n");
+		String description = "Description of graph:/ny = " + a + " x^2 + " + b + " x + "+ c + "/n/n";
 		
 		String direction = "Opens: ";
 		if(a < 0) {
@@ -17,9 +18,15 @@ public class Quadratic {
 		
 		String vertex = "Vertex: (" + x + ", " + (a*(x*x) + b*x + c) + ")/n";
 		
-		String xIntercept = "x-intercept(s): " + 
-		return description + direction + axis;
+		String xIntercept = "x-intercept(s): " + discriminant(a, b, c) + "/n";
+		
+		String yIntercept = "y-intercept: " + c + "/n";
+
+		String keepGoing = "Do you want to keep going? (Type \"quit\" to end)/n";
+
+		return description + direction + axis + vertex + xIntercept + yIntercept + keepGoing;
 	}
+
 
 
 
@@ -81,12 +88,6 @@ round2
 			return roots2 + " and " + roots3;
 		}
 	}
-	
-	
-	
-	
-	
-	
 }	
 	
 	
