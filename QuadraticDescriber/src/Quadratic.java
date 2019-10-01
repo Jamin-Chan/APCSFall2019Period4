@@ -1,28 +1,26 @@
-import java.util.Scanner;
-
 public class Quadratic {
 	public static String quadrDescriber(double a, double b, double c) {
-		String description = "Description of graph:/ny = " + a + " x^2 + " + b + " x + "+ c + "/n/n";
+		String description = "Description of graph:\ny = " + a + " x^2 + " + b + " x + "+ c + "\n\n";
 		
 		String direction = "Opens: ";
 		if(a < 0) {
-			direction += "Down/n";
+			direction += "Down\n";
 		} else if(a > 0){
-			direction += "Up/n";
+			direction += "Up\n";
 		} else {
-			direction = "Not a Quadratic/n";
+			direction = "Not a Quadratic\n";
 		}
 		
 		double x = (-b) / 2*a;
-		String axis = "Axis of Symmetry: " + x + "/n";
+		String axis = "Axis of Symmetry: " + x + "\n";
 		
-		String vertex = "Vertex: (" + x + ", " + (a*(x*x) + b*x + c) + ")/n";
+		String vertex = "Vertex: (" + x + ", " + (a*(x*x) + b*x + c) + ")\n";
 		
-		String xIntercept = "x-intercept(s): " + discriminant(a, b, c) + "/n";
+		String xIntercept = "x-intercept(s): " + discriminant(a, b, c) + "\n";
 		
-		String yIntercept = "y-intercept: " + c + "/n";
+		String yIntercept = "y-intercept: " + c + "\n";
 
-		String keepGoing = "Do you want to keep going? (Type \"quit\" to end)/n";
+		String keepGoing = "Do you want to keep going? (Type \"quit\" to end)\n";
 
 		return description + direction + axis + vertex + xIntercept + yIntercept + keepGoing;
 	}
