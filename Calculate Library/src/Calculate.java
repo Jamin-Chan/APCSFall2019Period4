@@ -84,11 +84,11 @@ public class Calculate {
 		return wholeNum + "_" + numerator + "/" + num2;
 	}
 	
-	public static String foil(int num1, int num2, int num3, int num4) {
+	public static String foil(int num1, int num2, int num3, int num4, String letter) {
 		int firstNum = num1 *num3;
 		int secondNum = (num1 *num4) + (num2 * num3);
 		int thirdNum = num2 * num4;
-		return firstNum + "x^2 + " + secondNum + " x + " + thirdNum;
+		return firstNum + letter + "^2 + " + secondNum + " " + letter + " + " + thirdNum;
 	}
 	
 	public static boolean isDivisibleBy(int num1, int num2) {
@@ -112,7 +112,7 @@ public class Calculate {
 		}
 	}
 	
-	public static double max1(double num1, double num2) {
+	public static double max(double num1, double num2) {
 		if(num1 > num2) {
 			return num1;
 		} else if(num2 > num1) {
@@ -122,7 +122,7 @@ public class Calculate {
 		}
 	}
 	
-	public static double max2(double num1, double num2, double num3) {
+	public static double max(double num1, double num2, double num3) {
 		if(num1 > num2 & num1 > num3) {
 			return num1;
 		} else if(num2 > num1 & num2 > num3) {

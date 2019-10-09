@@ -7,8 +7,10 @@ public class ProccessingNumbers {
 		int ammount  = userInput.nextInt();
 		System.out.println("Minimum number?");
 		int min = userInput.nextInt();
-		System.out.println("Maximum number?");
+		System.out.print(min);
+		System.out.print("Maximum number?");
 		int max = userInput.nextInt();
+		System.out.println(max);
 		int num;
 		int sum = 0;
 		System.out.println("What are your numbers?");
