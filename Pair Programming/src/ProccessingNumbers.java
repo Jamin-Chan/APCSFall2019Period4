@@ -5,22 +5,33 @@ public class ProccessingNumbers {
 		Scanner userInput = new Scanner(System.in);
 		System.out.println("how many numbers do you want?");
 		int ammount  = userInput.nextInt();
-		System.out.println("Minimum number?");
-		int min = userInput.nextInt();
-		System.out.print(min);
-		System.out.print("Maximum number?");
-		int max = userInput.nextInt();
-		System.out.println(max);
+		System.out.println("What are your numbers?");
 		int num;
 		int sum = 0;
-		System.out.println("What are your numbers?");
-		for(int i = 0; i <= ammount; i++) {
+		int even;
+		num = userInput.nextInt();
+		if(num % 2 == 0) {
+			sum += 1;
+			even = num;
+		}
+		int min = num;
+		int max = num;
+		for(int i = 0; i < ammount-1; i++) {
+			System.out.print("next number:");
 			num = userInput.nextInt();
-			if(num % 2 == 0) { 
-				System.out.println("even: " + num);
-				sum += num;
+			if(num < min) {
+				min = num;
+			}
+			if(num > max) {
+				max = num;
+			}
+			if(num % 2 == 0) {
+				sum += 1;
+				
 			}
 		}
+		System.out.println("Min: " + min);
+		System.out.println("Max: " + max);
 		System.out.println("total evens: " + sum);
 		userInput.close();
 	}
