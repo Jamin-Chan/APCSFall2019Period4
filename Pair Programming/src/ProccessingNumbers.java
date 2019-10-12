@@ -8,7 +8,7 @@ public class ProccessingNumbers {
 		System.out.println("What are your numbers?");
 		int num;
 		int sum = 0;
-		int even;
+		int even = 0;
 		num = userInput.nextInt();
 		if(num % 2 == 0) {
 			sum += 1;
@@ -27,12 +27,15 @@ public class ProccessingNumbers {
 			}
 			if(num % 2 == 0) {
 				sum += 1;
-				
+				if(even < num) {
+					even = num;
+				}
 			}
 		}
 		System.out.println("Min: " + min);
 		System.out.println("Max: " + max);
 		System.out.println("total evens: " + sum);
+		System.out.println("largest even number: " + even);
 		userInput.close();
 	}
 }
