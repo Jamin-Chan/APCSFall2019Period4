@@ -126,8 +126,8 @@ public class Calculate {
 		if(num1 > num2 & num1 > num3) {
 			return num1;
 		} else if(num2 > num1 & num2 > num3) {
-			return num3;
-		} else if(num3 > num1 & num3 > num1) {
+			return num2;
+		} else if(num3 > num1 & num3 > num2) {
 			return num3;
 		}
 		return 0.0;
@@ -180,21 +180,16 @@ public class Calculate {
 	}
 	
 	public static boolean isPrime(int num1) {
-		int divide = 0;
-		for(divide = num1; divide != 0; divide--) {
-			if(num1 / divide > 1) {
-				return true;
+		int divide;
+		for(divide = 2; divide < num1; divide++) {
+			if(num1 % divide == 0) {
+				return false;
 			}
 		}
-		return false;
+		return true;
 	}
 	
 	public static int gcf(int num1, int num2) {	
-		if(num1 * num2 == 0) {
-			throw new IllegalArgumentException
-				("can not be 0");
-		}
-		
 		int divisible = 0;
 		for(divisible = num1; divisible != 1; divisible--) {
 			if(num1 % divisible == 0 && num2 % divisible == 0) {
@@ -210,13 +205,13 @@ public class Calculate {
 			throw new IllegalArgumentException
 			("Can't put negative number");	
 		}
-				
 		double squared;
 		double multiplied;
-		for(squared = 0; (num1 - .005) <= squared || squared >= (num1 +.005); squared -= .001) {
-			multiplied = squared * squared;
-			if((num1 - .005) <= squared || squared >= (num1 +.005)) {
-				return round2(multiplied);
+		for(squared = 0; squared <= num1; squared += .005) {
+			multiplied  = squared * squared;
+			if(multiplied - .005 <= num1 & multiplied + .005 >= num1) {
+				round2(squared);
+				return squared;
 			}
 		}
 		return num1;
