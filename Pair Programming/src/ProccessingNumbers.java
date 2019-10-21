@@ -10,9 +10,6 @@ public class ProccessingNumbers {
 		int sum = 0;
 		num = userInput.nextInt();
 		int even = num;
-		if(num % 2 == 0) {
-			sum += 1;
-		}
 		int min = num;
 		int max = num;
 		for(int i = 0; i < ammount-1; i++) {
@@ -23,6 +20,9 @@ public class ProccessingNumbers {
 			}
 			if(num > max) {
 				max = num;
+			}
+			if(even % 2 != 0) {
+				even = num;
 			}
 			if(num % 2 == 0) {
 				sum += 1;
