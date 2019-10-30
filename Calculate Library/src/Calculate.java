@@ -64,8 +64,7 @@ public class Calculate {
 		if(num3 == 0) {
 			throw new IllegalArgumentException
 				("denominator can not be negative");
-		}
-		
+		}		
 		int numerator = 0;
 		numerator = (num1 * num3) + num2;
 		return numerator + "/" + num3;
@@ -88,7 +87,7 @@ public class Calculate {
 		int firstNum = num1 *num3;
 		int secondNum = (num1 *num4) + (num2 * num3);
 		int thirdNum = num2 * num4;
-		return firstNum + letter + "^2 + " + secondNum + " " + letter + " + " + thirdNum;
+		return firstNum + letter + "^2 + " + secondNum + letter + " + " + thirdNum;
 	}
 	
 	public static boolean isDivisibleBy(int num1, int num2) {
@@ -146,6 +145,9 @@ public class Calculate {
 	public static double round2(double num1) {
 		double round = 0;
 		round = (num1 * 100) + 0.5;
+		if(num1 < 0) {
+			round -= 1;
+		}
 		int rounded = (int) round;
 		double rounded2 = (double) rounded;
 		rounded2 = rounded2 / 100;
@@ -158,7 +160,7 @@ public class Calculate {
 					("exponent cannot be negative");
 		}
 		double multiply = 1;
-		for (int i = 0; i == exp; i++) {
+		for (int i = 0; i < exp; i++) {
 			multiply = multiply * num1;
 		}
 		
@@ -172,7 +174,7 @@ public class Calculate {
 		}
 		
 		int number = 1;
-		for(int num1 = num; num1 == 1; num1--) {
+		for(int num1 = num; num1 >= 1; num1--) {
 			number = number * num1;
 		}
 		
@@ -207,6 +209,15 @@ public class Calculate {
 		}
 		double squared;
 		double multiplied;
+		for(squared = 0; squared <= num1; squared++) {
+			multiplied  = squared * squared;
+			if(multiplied == num1) {
+				round2(squared);
+				return squared;
+			}
+		}
+		squared = 0;
+		multiplied = 0;
 		for(squared = 0; squared <= num1; squared += .005) {
 			multiplied  = squared * squared;
 			if(multiplied - .005 <= num1 & multiplied + .005 >= num1) {
@@ -240,16 +251,5 @@ public class Calculate {
 		return "";
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
