@@ -13,25 +13,41 @@ public class hourGlass {
 		}
 		System.out.println("|");
 		
+<<<<<<< HEAD
+		for(int line = 0; line < size/2 - 1; line++) {
+			int space = 0;
+=======
 		//top
 		for(int line = 0; line < size/2 - 1; line++) {
 			int space = 0;
 			
 			//for loop does the spaces
+>>>>>>> branch 'master' of https://github.com/Jamin-Chan/APCSFall2019Period4.git
 			for(space = 0; space < line + 1; space++) {
 				System.out.print(" ");
 			}
 
 			System.out.print("\\");
 			
+<<<<<<< HEAD
+			for(int semi = 0; semi + space + space < size; semi++) {
+				System.out.print(":");
+			}
+=======
 			// loop does the colons
 			for(int colon = 0; colon + (space*2) < size; colon++) {
 				System.out.print(":");
 			}
 			
+>>>>>>> branch 'master' of https://github.com/Jamin-Chan/APCSFall2019Period4.git
 			System.out.println("/");
 		}
 		
+<<<<<<< HEAD
+		System.out.println("||");
+		
+		
+=======
 		// middle
 		for(int i = 0; i < size/2; i++) {
 			System.out.print(" ");
@@ -61,6 +77,7 @@ public class hourGlass {
 			System.out.print("\"");
 		}
 		System.out.println("|");
+>>>>>>> branch 'master' of https://github.com/Jamin-Chan/APCSFall2019Period4.git
 		
 		userInput.close();
 	}

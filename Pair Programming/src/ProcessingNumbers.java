@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ProccessingNumbers {
+public class ProcessingNumbers {
 	public static void main(String[] args) {
 		Scanner userInput = new Scanner(System.in);
 		System.out.println("how many numbers do you want?");
