@@ -163,7 +163,6 @@ public class Calculate {
 		for (int i = 0; i < exp; i++) {
 			multiply = multiply * num1;
 		}
-		
 		return multiply;
 	}
 	
