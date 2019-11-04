@@ -39,7 +39,7 @@ public class Split {
 	}
 	
 	public static String part1(String sandwich) {
-		String[] ingrediants = sandwich.split("bread");
+		String[] ingredients = sandwich.split("bread");
 		sandwich.split("bread");
 		System.out.print(sandwich);
 	}
