@@ -6,15 +6,17 @@ public class FracCalc {
 
     public static void main(String[] args) {
     	Scanner userInput = new Scanner(System.in);
-    	System.out.println("What is your equation?");
-    	String equation = userInput.nextLine();
-    	String stop = " ";
+    	boolean stop = false;
   
-    	while(stop != "quit") {
+    	while(stop == false) {
     		// TODO: Read the input from the user and call produceAnswer with an equation
-    		produceAnswer(equation);
+    		System.out.println("What is your equation?");
+        	String equation = userInput.nextLine();
+    		System.out.println(produceAnswer(equation));
     		System.out.println("If stop, type 'quit'");
-    		stop = userInput.nextLine();
+    		if(userInput.nextLine().equals("quit")) {
+    			stop = true;    		
+    		}
     	}
     	userInput.close();
     }
@@ -30,32 +32,31 @@ public class FracCalc {
     public static String produceAnswer(String input) {
     	// TODO: Implement this function to produce the solution to the input
     	String numOpNum[] = input.split(" ");
-    	String num1[];
-    	String num2[];
+    	String whole1[];
+    	String whole2[];
+    	String frac1[];
+    	String frac2[];
     	String split1Frac;
     	String split2Frac;
     	if(numOpNum[0].contains("_")) {
-    		num1 = numOpNum[0].split("_");
-    		num1 = num1[2].split("/");
-    		split1Frac = "whole:" + num1[0] + "numerator:" + num1[1] + "denominator:" + num1[2];
+    		whole1 = numOpNum[0].split("_");
+    		frac1 = whole1[1].split("/");
+    		split1Frac = "whole:" + whole1[0] + " numerator:" + frac1[0] + " denominator:" + frac1[1];
     	} else {
-    		num1 = numOpNum[0].split("/");
-    		split1Frac =  "numerator:" + num1[0] + "denominator:" + num1[1];
+    		frac1 = numOpNum[0].split("/");
+    		split1Frac =  "whole:0 numerator:" + frac1[0] + " denominator:" + frac1[1];
     	}
     	
     	if(numOpNum[2].contains("_")) {
-    		num2 = numOpNum[2].split("_");
-    		num2 = num2[1].split("/");
-    		split2Frac = "whole:" + num2[0] + "numerator:" + num2[1] + "denominator:" + num2[2];
-    	} else {
-    		num2 = numOpNum[2].split("/");
-    		split2Frac =  "numerator:" + num2[0] + "denominator:" + num2[1];
+    		whole2 = numOpNum[2].split("_");
+    		frac2 = whole2[1].split("/");
+    		split2Frac = "whole:" + whole2[0] + " numerator:" + frac2[0] + " denominator:" + frac2[1];
+    	} else {							
+    		frac2 = numOpNum[2].split("/");
+    		split2Frac =  "whole:0 numerator:" + frac2[0] + " denominator:" + frac2[1];
     	}
 
     	return split2Frac;
-
     }
-
     // TODO: Fill in the space below with any helper methods that you think you will need
-    
 }
