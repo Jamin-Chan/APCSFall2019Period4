@@ -13,49 +13,45 @@ public class hourGlass {
 		}
 		System.out.println("|");
 		
-<<<<<<< HEAD
-		for(int line = 0; line < size/2 - 1; line++) {
-			int space = 0;
-=======
+		// see if the size is odd
+		int odd = 0;
+		if(size % 2 != 0) {
+			odd =1;
+		}
+		
 		//top
-		for(int line = 0; line < size/2 - 1; line++) {
+		int line;
+		for(line = 0 - odd; line < size/2 - 1; line++) {
 			int space = 0;
 			
 			//for loop does the spaces
->>>>>>> branch 'master' of https://github.com/Jamin-Chan/APCSFall2019Period4.git
-			for(space = 0; space < line + 1; space++) {
+			for(space = 0 - odd; space < line + 1; space++) {
 				System.out.print(" ");
 			}
 
 			System.out.print("\\");
 			
-<<<<<<< HEAD
-			for(int semi = 0; semi + space + space < size; semi++) {
-				System.out.print(":");
-			}
-=======
 			// loop does the colons
-			for(int colon = 0; colon + (space*2) < size; colon++) {
+			for(int colon = 0 + (2 * odd); colon + (space *2)< size; colon++) {
 				System.out.print(":");
 			}
 			
->>>>>>> branch 'master' of https://github.com/Jamin-Chan/APCSFall2019Period4.git
 			System.out.println("/");
 		}
 		
-<<<<<<< HEAD
-		System.out.println("||");
-		
-		
-=======
 		// middle
-		for(int i = 0; i < size/2; i++) {
+		for(int i = 0 ; i < size/2; i++) {
 			System.out.print(" ");
 		}
-		System.out.println("||");
 		
+		if( odd == 1) {
+			System.out.println("| |");
+		}else{
+			System.out.println("||");
+		}
+
 		//bottom
-		for(int line = 0; line < size/2 - 1; line++) {
+		for(line = 0 - odd; line < size/2 - 1; line++) {
 			int space = 0;
 			
 			for(space = 0; space < (size/2) - (line + 1); space++) {
@@ -77,8 +73,8 @@ public class hourGlass {
 			System.out.print("\"");
 		}
 		System.out.println("|");
->>>>>>> branch 'master' of https://github.com/Jamin-Chan/APCSFall2019Period4.git
 		
 		userInput.close();
 	}
 }
+

@@ -40,20 +40,32 @@ public class FracCalc {
     	String split2Frac;
     	if(numOpNum[0].contains("_")) {
     		whole1 = numOpNum[0].split("_");
-    		frac1 = whole1[1].split("/");
-    		split1Frac = "whole:" + whole1[0] + " numerator:" + frac1[0] + " denominator:" + frac1[1];
-    	} else {
+    		if(numOpNum[0].contains("/")) {
+    			frac1 = whole1[1].split("/");
+    			split1Frac = "whole:" + whole1[0] + " numerator:" + frac1[0] + " denominator:" + frac1[1];
+    		} else {
+    			split1Frac = "whole:" + whole1[0] + " numerator:0 denominator:1";
+    		}
+    	} else if(numOpNum[0].contains("/")){
     		frac1 = numOpNum[0].split("/");
     		split1Frac =  "whole:0 numerator:" + frac1[0] + " denominator:" + frac1[1];
+    	} else {
+    		split1Frac = "whole:" + numOpNum[0] + " numerator:0 denominator:1";
     	}
     	
     	if(numOpNum[2].contains("_")) {
     		whole2 = numOpNum[2].split("_");
-    		frac2 = whole2[1].split("/");
-    		split2Frac = "whole:" + whole2[0] + " numerator:" + frac2[0] + " denominator:" + frac2[1];
-    	} else {							
+    		if(numOpNum[2].contains("/")) {
+    			frac2 = whole2[1].split("/");
+    			split2Frac = "whole:" + whole2[0] + " numerator:" + frac2[0] + " denominator:" + frac2[1];
+    		} else {
+    			split2Frac = "whole:" + whole2[0] + " numerator:0 denominator:1";
+    		}
+    	} else if(numOpNum[2].contains("/")){							
     		frac2 = numOpNum[2].split("/");
     		split2Frac =  "whole:0 numerator:" + frac2[0] + " denominator:" + frac2[1];
+    	} else {
+    		split2Frac = "whole:" + numOpNum[2] + " numerator:0 denominator:1";
     	}
 
     	return split2Frac;
