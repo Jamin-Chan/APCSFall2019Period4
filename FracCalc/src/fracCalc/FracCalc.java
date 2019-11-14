@@ -27,18 +27,32 @@ public class FracCalc {
     	int whole2 = Integer.parseInt(separated2[0]);
     	int numer2 = Integer.parseInt(separated2[1]);
     	int den2 = Integer.parseInt(separated2[2]);
-    	numer1 += whole1 * den1;
-    	numer2 += whole2 * den2;
-    	den1 *= den2;
-    	numer1 *= den1;
-    	numer2 *= den1;
+    	System.out.println(numer1 + " " + den1 + " " + numer2 + " " + den2);
+    	if(whole1 > 0) {
+    		numer1 += whole1 * den1;
+    	} else {
+    		numer1 = (whole1 * den1) - numer2;
+    	}
+    	if(whole2 > 0) {
+    		numer2 += whole2 * den2;
+    	} else {
+    		numer2 = (whole2 * den2) - numer2;
+    	}
+    	System.out.println(numer1 + " " + den1 + " " + numer2 + " " + den2);
+    	if(den1 != den2) {
+    		den1 *= den2;
+    		numer1 *= den1;
+    		numer2 *= den1;
+    	}
+    	System.out.println(numer1 + " " + den1 + " " + numer2 + " " + den2);
     	if(numOpNum[1].equals("+")) {
     		numer1 += numer2;
     	}else if(numOpNum[1].equals("-")) {
     		numer1 -= numer2; 
     	} else if(numOpNum[1].equals("/")) {
-    		numer1 *= den1;
+    		numer1 = numer1 * den1;
     		den1 *= numer2;
+    		System.out.println(numer1 + " " + den1 + " " + numer2 + " " + den2);
     		if(den1 < 0) {
     			numer1 *= -1;
     			den1 *= -1;
@@ -47,15 +61,18 @@ public class FracCalc {
     		numer1 *= numer2;
     		den1 *= den1;
     	}
+    	System.out.println(numer1 + " " + den1 + " " + numer2 + " " + den2);
     	int divisible = gcf(numer1, den1);
+    	System.out.println(divisible);
     	if(divisible > 1) {
     		numer1 /= divisible;
     		den1 /= divisible;
     	}
     	if(numer1 > den1) {
     		whole1 = numer1 / den1;
-    		numer1 -= (whole1 * numer1);
+    		numer1 -= (whole1 * den1);
     	}
+    	System.out.println(numer1 + " " + den1 + " " + numer2 + " " + den2);
     	if(whole1 == 0 && numer1 != 0) {
     		return numer1 + "/" + den1;
     	} else if(numer1 == 0 && whole1 != 0 ) {
