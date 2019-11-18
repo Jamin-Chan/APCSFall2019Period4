@@ -22,7 +22,7 @@ public class DoMath {
 		System.out.println("factorial :" + Calculate.factorial(5));
 		System.out.println("isPrime :" + Calculate.isPrime(4));
 		System.out.println("gcf :" + Calculate.gcf(10, 13));
-		System.out.println("sqrt :" + Calculate.sqrt(9));
+		System.out.println("sqrt :" + Calculate.sqrt(10));
 		System.out.println("quadForm :" + Calculate.quadForm(1, -1, -6));
 		
 	}

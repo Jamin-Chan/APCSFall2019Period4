@@ -129,7 +129,7 @@ public class Calculate {
 		} else if(num3 > num1 & num3 > num2) {
 			return num3;
 		}
-		return 0.0;
+		return num1;
 	}
 	
 	public static int min(int num1, int num2) {
