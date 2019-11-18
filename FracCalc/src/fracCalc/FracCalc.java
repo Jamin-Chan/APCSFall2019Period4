@@ -27,7 +27,7 @@ public class FracCalc {
     	int whole2 = Integer.parseInt(separated2[0]);
     	int numer2 = Integer.parseInt(separated2[1]);
     	int den2 = Integer.parseInt(separated2[2]);
-    	System.out.println(whole1 + " " + numer1 + " " + den1 + " " + whole1 + " " + numer2 + " " + den2);
+    	//System.out.println(whole1 + " " + numer1 + " " + den1 + " " + whole1 + " " + numer2 + " " + den2);
     	if(whole1 >= 0) {
     		numer1 += whole1 * den1;
     	} else {
@@ -38,13 +38,14 @@ public class FracCalc {
     	} else {
     		numer2 = (whole2 * den2) - numer2;
     	}
-    	System.out.println(numer1 + " " + den1 + " " + numer2 + " " + den2);
+    	whole1 = 0;
+    	//System.out.println(numer1 + " " + den1 + " " + numer2 + " " + den2);
     	if(den1 != den2) {
     		numer2 *= den1;
     		den1 *= den2;
     		numer1 *= den2;
     	}
-    	System.out.println(numer1 + " " + den1 + " " + numer2 + " " + den2);
+    	//System.out.println(numer1 + " " + den1 + " " + numer2 + " " + den2);
     	if(numOpNum[1].equals("+")) {
     		numer1 += numer2;
     	}else if(numOpNum[1].equals("-")) {
@@ -61,14 +62,14 @@ public class FracCalc {
     		den1 *= den1;
     	}
 
-    	System.out.println(numer1 + " " + den1 + " " + numer2 + " " + den2);
+    	//System.out.println(numer1 + " " + den1 + " " + numer2 + " " + den2);
     	int divisible = gcf(numer1, den1);
-    	System.out.println(divisible);
+    	//System.out.println(divisible);
     	if(divisible > 1) {
     		numer1 /= divisible;
     		den1 /= divisible;
     	}
-    	System.out.println(numer1 + " " + den1 + " " + numer2 + " " + den2);
+    	//System.out.println(numer1 + " " + den1 + " " + numer2 + " " + den2);
     	if(numer1 > den1 || (numer1 * -1) > den1) {
     		whole1 = numer1 / den1;
     		System.out.println("whole " + whole1);
@@ -77,7 +78,7 @@ public class FracCalc {
     			numer1 *= -1;
     		}
     	}
-    	System.out.println(numer1 + " " + den1 + " " + numer2 + " " + den2);
+    	//System.out.println(whole1 + " " + numer1 + " " + den1 + " " + whole1 + " " + numer2 + " " + den2);
     	if(whole1 == 0 && numer1 != 0) {
     		return numer1 + "/" + den1;
     	} else if(numer1 == 0 && whole1 != 0 ) {
@@ -105,7 +106,12 @@ public class FracCalc {
     			String frac[] = num[1].split("/");
     			number[1] = frac[0];
     		}
-    	}	
+    	} else {
+    		number[0] = num1;
+    		if(number[0].contains("/")) {
+    			number[0] = "0";
+    		}
+    	}
     	return number;
     }
     public static int gcf(int num1, int num2) {	
