@@ -10,7 +10,17 @@ public class ArraysLab3 {
 	//in which every element is the sum of the elements at that index for the arrays arr1 and arr2. 
 	//You can assume arrays arr1 and arr2 have at least one element each and are the same length.
 	public static int[] sum(int[] arr1, int[] arr2) {
-		
+		int[] sum;
+
+		for(int i =  0; arr1.length + arr2.length > 0; i++) {
+			if(i >= arr2.length) {
+				sum += arr1[i];
+			} else {
+				sum += arr2[i];
+			}
+		}
+		sum = adding.split(" ");
+		return sum;
 
 	}
 	
