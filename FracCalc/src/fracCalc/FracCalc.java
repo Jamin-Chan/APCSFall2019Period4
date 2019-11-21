@@ -27,7 +27,7 @@ public class FracCalc {
     	int whole2 = Integer.parseInt(separated2[0]);
     	int numer2 = Integer.parseInt(separated2[1]);
     	int den2 = Integer.parseInt(separated2[2]);
-    	//System.out.println(whole1 + " " + numer1 + " " + den1 + " " + whole1 + " " + numer2 + " " + den2);
+    	//System.out.println(whole1 + " " + numer1 + " " + den1 + " " + whole2 + " " + numer2 + " " + den2);
     	if(whole1 >= 0) {
     		numer1 += whole1 * den1;
     	} else {
@@ -79,7 +79,9 @@ public class FracCalc {
     		}
     	}
     	//System.out.println(whole1 + " " + numer1 + " " + den1 + " " + whole1 + " " + numer2 + " " + den2);
-    	if(whole1 == 0 && numer1 != 0) {
+    	if(numer1 == den1 && numer1 != 0){
+    		return "1";
+    	} else if(whole1 == 0 && numer1 != 0) {
     		return numer1 + "/" + den1;
     	} else if(numer1 == 0 && whole1 != 0 ) {
     		return whole1 + "";
