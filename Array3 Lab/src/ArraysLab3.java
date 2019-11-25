@@ -11,15 +11,14 @@ public class ArraysLab3 {
 	//You can assume arrays arr1 and arr2 have at least one element each and are the same length.
 	public static int[] sum(int[] arr1, int[] arr2) {
 		int[] sum;
-
-		for(int i =  0; arr1.length + arr2.length > 0; i++) {
-			if(i >= arr2.length) {
-				sum += arr1[i];
-			} else {
-				sum += arr2[i];
-			}
+		sum = new int[arr1.length + arr2.length];
+		for(int i = 0; i < arr1.length; i++) {
+			sum[i] = arr1[i];
 		}
-		sum = adding.split(" ");
+		for(int i = 0; i < arr2.length; i++) {
+			sum[i + arr1.length] = arr2[i];
+		}
+
 		return sum;
 
 	}
@@ -36,7 +35,18 @@ public class ArraysLab3 {
 	//except for the element at index idx (thus, the returned array has a length of arr.length – 1).  
 	//You can assume arr has at least two elements.
 	public static int[] remove(int[] arr, int idx) {
-		
+		int remove[];
+		remove  = new int[arr.length - 1];
+		for( int i = 0; i < arr.length; i++) {
+			if(i == idx ) {
+				i++;
+			} else if(i > idx){
+				remove[i-1] += arr[i];
+			} else {
+				remove[i] = arr[i];
+			}
+		}
+		return remove;
 	}
 	
 	//Write a method sumEven that accepts an array of integers arr and 

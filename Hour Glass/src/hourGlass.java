@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class hourGlass {
+public class Hourglass {
 	public static void main(String[] args) {
 		System.out.println("How Big?");
 		Scanner userInput = new Scanner(System.in);
