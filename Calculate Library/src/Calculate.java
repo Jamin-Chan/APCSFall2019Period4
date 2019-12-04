@@ -49,6 +49,7 @@ public class Calculate {
 		return radians;
 	}
 	
+	// inputs a, b, and c into the equation of discriminant to find the answer
 	public static double discriminant(double number1, double number2, double number3) {
 		double discriminant = 0;
 		discriminant = (number2 * number2) - (4 * number1 * number3);
@@ -83,6 +84,8 @@ public class Calculate {
 		return wholeNum + "_" + numerator + "/" + num2;
 	}
 	
+	// A call that takes 3 integers and one letter and converts it to
+	// the trinomial formula
 	public static String foil(int num1, int num2, int num3, int num4, String letter) {
 		int firstNum = num1 *num3;
 		int secondNum = (num1 *num4) + (num2 * num3);
@@ -90,6 +93,7 @@ public class Calculate {
 		return firstNum + letter + "^2 + " + secondNum + letter + " + " + thirdNum;
 	}
 	
+	// inputs 2 integers and returns the common divisor
 	public static boolean isDivisibleBy(int num1, int num2) {
 		if(num2 == 0) {
 			throw new IllegalArgumentException
@@ -103,6 +107,7 @@ public class Calculate {
 		}
 	}
 	
+	// gets a double and returns the absolute value of it
 	public static double absValue(double num1) {
 		if( num1 >= 0 ) {
 			return num1;
@@ -111,6 +116,7 @@ public class Calculate {
 		}
 	}
 	
+	// gets 2 doubles and returns the largest number
 	public static double max(double num1, double num2) {
 		if(num1 > num2) {
 			return num1;
@@ -121,17 +127,20 @@ public class Calculate {
 		}
 	}
 	
+	// overload of max, gets 3 double and
+	// returns the largest number
 	public static double max(double num1, double num2, double num3) {
-		if(num1 > num2 & num1 > num3) {
+		if(num1 > num2 && num1 > num3) {
 			return num1;
 		} else if(num2 > num1 & num2 > num3) {
 			return num2;
-		} else if(num3 > num1 & num3 > num2) {
+		} else {
 			return num3;
 		}
-		return num1;
 	}
 	
+	//A method thats gets 2 integers and
+	// returns the smallest number
 	public static int min(int num1, int num2) {
 		if(num1 < num2) {
 			return num1;
@@ -142,6 +151,8 @@ public class Calculate {
 		}
 	}
 	
+	//round2 calls for a double and rounds that number
+	// to the hundredth place
 	public static double round2(double num1) {
 		double round = 0;
 		round = (num1 * 100) + 0.5;
@@ -154,10 +165,12 @@ public class Calculate {
 		return rounded2;
 	}
 	
+	// This methods calls for a double and the (integer)exponent
+	// then returns the value after multiplying it
 	public static double exponent(double num1, int exp) {
-		if(exp < 0) {
+		if(exp <= 0) {
 				throw new IllegalArgumentException
-					("exponent cannot be negative");
+					("exponent cannot be negative or 0");
 		}
 		double multiply = 1;
 		for (int i = 0; i < exp; i++) {
@@ -166,6 +179,8 @@ public class Calculate {
 		return multiply;
 	}
 	
+	//A method that calls for a integer and returns
+	// its factorial
 	public static int factorial(int num) {
 		if(num < 0) {
 			throw new IllegalArgumentException
@@ -180,6 +195,8 @@ public class Calculate {
 		return number;
 	}
 	
+	// This method gets a input and returns a boolean
+	// showing whether that number is a prime or not
 	public static boolean isPrime(int num1) {
 		int divide;
 		for(divide = 2; divide < num1; divide++) {
@@ -190,6 +207,8 @@ public class Calculate {
 		return true;
 	}
 	
+	// A method that gets 2 integers and return the
+	// greatest common factor
 	public static int gcf(int num1, int num2) {	
 		int divisible = 0;
 		for(divisible = num1; divisible != 1; divisible--) {
@@ -201,32 +220,23 @@ public class Calculate {
 		return divisible;
 	}
 	
+	// A method that calls for a double and returns 
+	// the square root of that number
 	public static double sqrt(double num1) {
 		if(num1 < 0) {
 			throw new IllegalArgumentException
 			("Can't put negative number");	
 		}
-		double squared;
-		double multiplied;
-		for(squared = 0; squared <= num1; squared++) {
-			multiplied  = squared * squared;
-			if(multiplied == num1) {
-				round2(squared);
-				return squared;
-			}
+		
+		double sqrt = 0;
+		for(double i = 0; i * i <= num1; i+=0.001) {
+			sqrt = i;
 		}
-		squared = 0;
-		multiplied = 0;
-		for(squared = 0; squared <= num1; squared += .005) {
-			multiplied  = squared * squared;
-			if(multiplied - .005 <= num1 & multiplied + .005 >= num1) {
-				round2(squared);
-				return squared;
-			}
-		}
-		return num1;
+		return round2(sqrt);
 	}
 	
+	//A method that calls for 3 integers and runs it
+	// through the quadratic formula and returns its results
 	public static String quadForm(int num1, int num2, int num3) {
 		double roots = discriminant(num1, num2, num3);
 		System.out.println(roots);
@@ -245,10 +255,8 @@ public class Calculate {
 			roots3 = -(num2) + sqrt(roots);
 			roots3 = (roots3) / (2 * num1);
 
-			return Double.toString(roots2) + " and " + Double.toString(roots3);
+			return Double.toString(roots3) + " and " + Double.toString(roots2);
 		}	
 		return "";
 	}
 }
-
-
