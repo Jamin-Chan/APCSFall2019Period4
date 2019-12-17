@@ -28,6 +28,7 @@ public class FracCalc {
     	int numer2 = Integer.parseInt(separated2[1]);
     	int den2 = Integer.parseInt(separated2[2]);
     	//System.out.println(whole1 + " " + numer1 + " " + den1 + " " + whole2 + " " + numer2 + " " + den2);
+    	// turns input into a improper fraction if it has a whole number
     	if(whole1 >= 0) {
     		numer1 += whole1 * den1;
     	} else {
@@ -40,12 +41,14 @@ public class FracCalc {
     	}
     	whole1 = 0;
     	//System.out.println(numer1 + " " + den1 + " " + numer2 + " " + den2);
+    	// gets the common denominator before calculating the 2 numbers with the operator
     	if(den1 != den2) {
     		numer2 *= den1;
     		den1 *= den2;
     		numer1 *= den2;
     	}
     	//System.out.println(numer1 + " " + den1 + " " + numer2 + " " + den2);
+    	//finds which operrator the equation contains and calculates it
     	if(numOpNum[1].equals("+")) {
     		numer1 += numer2;
     	}else if(numOpNum[1].equals("-")) {
@@ -63,6 +66,7 @@ public class FracCalc {
     	}
 
     	//System.out.println(numer1 + " " + den1 + " " + numer2 + " " + den2);
+    	//simplify if necessary
     	int divisible = gcf(numer1, den1);
     	//System.out.println(divisible);
     	if(divisible > 1) {
@@ -70,6 +74,7 @@ public class FracCalc {
     		den1 /= divisible;
     	}
     	//System.out.println(numer1 + " " + den1 + " " + numer2 + " " + den2);
+    	//turns the improper fraction to a wholes number and fraction
     	if(numer1 > den1 || (numer1 * -1) > den1) {
     		whole1 = numer1 / den1;
     		System.out.println("whole " + whole1);
@@ -79,6 +84,7 @@ public class FracCalc {
     		}
     	}
     	//System.out.println(whole1 + " " + numer1 + " " + den1 + " " + whole1 + " " + numer2 + " " + den2);
+    	//returns the fraction or wholes number or wholes number with fraction
     	if(numer1 == den1 && numer1 != 0){
     		return "1";
     	} else if(whole1 == 0 && numer1 != 0) {
