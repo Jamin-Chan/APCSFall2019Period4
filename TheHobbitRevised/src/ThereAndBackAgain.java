@@ -4,11 +4,9 @@ import java.util.ArrayList;
  * inheritance practice
  * 2/5/20 4th
  */
-public class ThereAndBackAgain 
-{
+public class ThereAndBackAgain {
 
-	public static void main(String[] args) 
-	{
+	public static void main(String[] args) {
 		
 		Hobbit frodo = new Hobbit("Frodo");
 		Hobbit sam = new Hobbit("Sam");
@@ -48,30 +46,39 @@ public class ThereAndBackAgain
 					
 			party2.add(bilbo);
 			party2.add(gandalf);
+			
+			createParty(party2, dwarfNames);
+			allTravel(party2, 100);
+			
+			for(Traveler person: party2) {
+				System.out.println(person.getName() + " has traveled " + person.getDistanceTraveled() + " miles.");
+			}
 	}
 	
 	
 			//write createParty
 			// Call the createParty method and pass it party2 and the dwarfNames array.
 			// create party should add all the new dwarves to party2,
-	public static void createParty(ArrayList<String> party, String[] names) {
+	public static void createParty(ArrayList<Traveler> party, String[] names) {
 		for(int i = 0; i < names.length; i++) {
-			party.add(names[i]);
+			party.add(new Dwarf(names[i]));
 		}
 	}
 			//Write allTravel
 			// Finally, call the allTravel method passing it party2 and 100 (representing
 			// the 100 miles that party2 has traveled together.
-
+			
 			//Make sure your code prints out the name and distances party2 has traveled.
-		
-		
-		
-		
-		
-		System.out.println();
-
+	public static void allTravel(ArrayList<Traveler> party, int miles) {
+		for(Traveler person: party) {
+			person.travel(miles);
+		}
 	}
+		
+		
+
+}
+	
 
 	
-}
+
